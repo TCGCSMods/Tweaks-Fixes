@@ -1,0 +1,47 @@
+# Build output
+bin/
+obj/
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Visual Studio
+.vs/
+*.user
+*.userosscache
+*.suo
+
+# Build artifacts
+[Bb]uild/
+[Bb]uilds/
+[Dd]ist/
+publish/
+
+# Test results
+TestResults/
+*.trx
+
+# Game assemblies
+lib/
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper*
+*.DotSettings.user
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
