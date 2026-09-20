@@ -11,3 +11,9 @@ This mod aims to make small changes to various parts of the game, improving or a
 When selling a card to a customer, your offer is automatically set to the customer's asking price instead of starting at `0`.
 <br>
 So you can quickly accept their offer if you like it without having to manually type it in.
+
+## Card Opening
+
+Reduces the delay after opening a booster pack, allowing you to move onto the next pack more quickly.
+
+The total card value animation is also shortened from the game's default `2` seconds to `1` second.
