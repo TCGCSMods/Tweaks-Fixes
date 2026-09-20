@@ -15,5 +15,7 @@ So you can quickly accept their offer if you like it without having to manually 
 ## Card Opening
 
 Reduces the delay after opening a booster pack, allowing you to move onto the next pack more quickly.
-
+<br>
 The total card value animation is also shortened from the game's default `2` seconds to `1` second.
+
+When a newly collected card is present, the final reveal sound is played at a higher pitch.
