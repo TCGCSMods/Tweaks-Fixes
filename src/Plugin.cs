@@ -1,6 +1,7 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
+using TweaksAndFixes.Patches;
 
 namespace TweaksAndFixes;
 
@@ -8,13 +9,19 @@ namespace TweaksAndFixes;
 public class Plugin : BaseUnityPlugin {
     internal new static ManualLogSource Logger;
 
-    private Harmony harmony;
+    private Harmony _harmony;
 
     private void Awake() {
-        harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
-        harmony.PatchAll();
+        CardOpeningSequencePatch.Initialize(Config);
+        
+        _harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
+        _harmony.PatchAll();
 
         Logger = base.Logger;
         Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
+    }
+
+    private void OnDestroy() {
+        _harmony.UnpatchSelf();
     }
 }
