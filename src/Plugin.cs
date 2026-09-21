@@ -14,7 +14,8 @@ public class Plugin : BaseUnityPlugin {
     private void Awake() {
         CardOpeningSequencePatch.Initialize(Config);
         GiftAudioPatch.Initialize(Config);
-        
+        PlayerSpawnPatch.Initialize(Config);
+
         _harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
         _harmony.PatchAll();
 
