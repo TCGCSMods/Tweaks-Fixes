@@ -6,23 +6,33 @@ namespace TweaksAndFixes.Patches;
 
 [HarmonyPatch(typeof(CardOpeningSequence), nameof(CardOpeningSequence.Update))]
 public static class CardOpeningSequencePatch {
+    private static ConfigEntry<bool> _enabled;
     private static ConfigEntry<float> _beforeNextPackDelay;
 
-    private static CardOpeningSequence _currentSequence;
 
     public static void Initialize(ConfigFile config) {
+        _enabled = config.Bind(
+            "Card Opening",
+            "ShortenNextPackDelayEnabled",
+            true,
+            "Enables shortening the delay before you can proceed to the next pack after the final card reveal."
+        );
+
         _beforeNextPackDelay = config.Bind(
             "Card Opening",
             "BeforeNextPackDelay",
             0.5F,
-            "Delay before the next-pack prompt becomes available. Original: 1 second."
+            "Delay in seconds before input to continue is accepted after the final card reveal. Original: 1 second."
         );
+    }
+
+    [HarmonyPrepare]
+    private static bool Prepare() {
+        return _enabled.Value;
     }
 
     [HarmonyPrefix]
     private static void Prefix(CardOpeningSequence __instance) {
-        _currentSequence = __instance;
-
         if (!__instance.m_IsScreenActive) return;
 
         if (__instance.m_StateIndex == 9)
@@ -38,5 +48,4 @@ public static class CardOpeningSequencePatch {
         var extraRate = originalDuration / desiredDuration - 1.0F;
         if (extraRate > 0.0F) timer += Time.deltaTime * extraRate;
     }
-
 }
