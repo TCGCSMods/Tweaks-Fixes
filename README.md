@@ -20,6 +20,10 @@ This mod aims to make small changes to various parts of the game, improving or a
 
 - When a newly collected card is present, the final reveal sound is played at a higher pitch.
 
+### Player Spawn
+
+- Spawns the player at the shop door instead of on the road.
+
 ## Configuration
 
 The mods configuration file is generated at first launch at `BepInEx/config/TweaksAndFixes.cfg`.
@@ -51,6 +55,13 @@ NewCardPitchEnabled = true
 # Setting type: Single
 # Default value: 0.15
 NewCardPitchIncrease = 0.15
+
+[Player Spawn]
+
+## Changes the players spawn location to the shop door instead of on the road.
+# Setting type: Boolean
+# Default value: true
+Enabled = true
 ```
 
 </details>
