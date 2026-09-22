@@ -24,6 +24,12 @@ This mod aims to make small changes to various parts of the game, improving or a
 
 - Spawns the player at the shop door instead of on the road.
 
+### Crouch Height
+
+- Changes how far the camera drops while crouching to make it a little more useful.
+  <br> 
+  The default game offset is -1.0, which makes it difficult to look at things from a nice perspective.
+
 ## Configuration
 
 The mods configuration file is generated at first launch at `BepInEx/config/TweaksAndFixes.cfg`.
@@ -62,6 +68,19 @@ NewCardPitchIncrease = 0.15
 # Setting type: Boolean
 # Default value: true
 Enabled = true
+
+[Crouch Height]
+
+## Overrides how far the camera drops down while crouching.
+# Setting type: Boolean
+# Default value: true
+Enabled = true
+
+## Local Y offset applied to the camera while crouching. The game's default is -1.0.
+# Setting type: Single
+# Default value: -0.6
+CameraDropY = -0.6
+
 ```
 
 </details>
