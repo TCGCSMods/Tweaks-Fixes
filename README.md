@@ -20,6 +20,16 @@ This mod aims to make small changes to various parts of the game, improving or a
 
 - When a newly collected card is present, the final reveal sound is played at a higher pitch.
 
+### Auto Pack opener
+
+- Speeds up how long auto pack openers take to process each pack.
+  <br>
+  By default, they are very incredibly slow, and are slower than normal pack openings.
+
+- Auto pack openers continue processing during the overnight transition.
+  <br>
+  Instead of ignoring the passage of time when the next day begins, the elapsed overnight time is applied so multiple packs can be processed automatically.
+
 ### Player Spawn
 
 - Spawns the player at the shop door instead of on the road.
@@ -40,6 +50,18 @@ Changes require a game restart for them to take effect.
 <summary>View default config</summary>
 
 ```ini
+[AutoPackOpener]
+
+## Speeds up how long auto pack openers take to process each pack.
+# Setting type: Boolean
+# Default value: true
+Enabled = true
+
+## Multiplies how long each auto pack opener takes to process a single pack. Original: 1.0
+# Setting type: Single
+# Default value: 0.25
+PackOpenTimeMultiplier = 0.25
+
 [Card Opening]
 
 ## Enables shortening the delay before you can proceed to the next pack after the final card reveal.
@@ -62,13 +84,6 @@ NewCardPitchEnabled = true
 # Default value: 0.15
 NewCardPitchIncrease = 0.15
 
-[Player Spawn]
-
-## Changes the players spawn location to the shop door instead of on the road.
-# Setting type: Boolean
-# Default value: true
-Enabled = true
-
 [Crouch Height]
 
 ## Overrides how far the camera drops down while crouching.
@@ -81,6 +96,12 @@ Enabled = true
 # Default value: -0.6
 CameraDropY = -0.6
 
+[Player Spawn]
+
+## Changes the players spawn location to the shop door instead of on the road.
+# Setting type: Boolean
+# Default value: true
+Enabled = true
 ```
 
 </details>
