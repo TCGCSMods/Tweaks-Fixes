@@ -16,6 +16,7 @@ public class Plugin : BaseUnityPlugin {
         GiftAudioPatch.Initialize(Config);
         PlayerSpawnPatch.Initialize(Config);
         CrouchHeightPatch.Initialize(Config);
+        PackOpenerSpeedPatch.Initialize(Config);
 
         _harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
         _harmony.PatchAll();
