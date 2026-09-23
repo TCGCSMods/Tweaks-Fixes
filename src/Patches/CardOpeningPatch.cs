@@ -5,7 +5,7 @@ using UnityEngine;
 namespace TweaksAndFixes.Patches;
 
 [HarmonyPatch(typeof(CardOpeningSequence), nameof(CardOpeningSequence.Update))]
-public static class CardOpeningSequencePatch {
+public static class CardOpeningPatch {
     private static ConfigEntry<bool> _enabled;
     private static ConfigEntry<float> _beforeNextPackDelay;
 

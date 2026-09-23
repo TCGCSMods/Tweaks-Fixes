@@ -4,7 +4,7 @@ using UnityEngine;
 namespace TweaksAndFixes.Patches;
 
 [HarmonyPatch(typeof(CardOpeningSequenceUI), nameof(CardOpeningSequenceUI.Update))]
-public static class CardOpeningSequenceUIPatch {
+public static class CardOpeningUIPatch {
     [HarmonyPrefix]
     private static void Prefix(CardOpeningSequenceUI __instance) {
         if (!__instance.m_IsShowingTotalValue) return;

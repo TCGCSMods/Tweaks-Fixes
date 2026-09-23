@@ -12,7 +12,7 @@ public class Plugin : BaseUnityPlugin {
     private Harmony _harmony;
 
     private void Awake() {
-        CardOpeningSequencePatch.Initialize(Config);
+        CardOpeningPatch.Initialize(Config);
         GiftAudioPatch.Initialize(Config);
         PlayerSpawnPatch.Initialize(Config);
         CrouchHeightPatch.Initialize(Config);
